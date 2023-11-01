@@ -1,11 +1,28 @@
-n, k, l, c, d, p, nl, np = map(int, input().split(' '))
+n = int(input())
+a = list(map(int, input().split(" ")))
+police = 0
+crime = 0
 
-a = l*k
+if a[0]== -1:
+    crime+=1
+else:
+    police+=a[0]
 
-b = a//nl
-lime = c*d
-solt = p//np
+
+for i in range(1,len(a[0:n])):
+
+    if a[i] == -1:
+        if police>0:
+            police-=1
+
+        else:
+            crime+=1
+
+    else:
+        police+=a[i]
+
+print(crime)
 
 
-retult = min(b,lime,solt)
-print(retult//n)
+
+
